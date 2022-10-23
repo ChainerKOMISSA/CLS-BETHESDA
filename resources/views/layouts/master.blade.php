@@ -48,66 +48,58 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
+            <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-info"><i class="fas fa-bed"></i></span>
 
-                <p>New Orders</p>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Patients</span>
+                    <span class="info-box-number">1,410</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fas fa-capsules"></i></span>
 
-                <p>Bounce Rate</p>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Produits</span>
+                    <span class="info-box-number">410</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
               </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-warning"><i class="fas fa-baby"></i></span>
 
-                <p>User Registrations</p>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Accouchements</span>
+                    <span class="info-box-number">13,648</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
               </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-danger"><i class="fas fa-user-md"></i></span>
 
-                <p>Unique Visitors</p>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Infirmiers</span>
+                    <span class="info-box-number">93,139</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
               </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
+              <!-- /.col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->

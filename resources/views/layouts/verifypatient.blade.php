@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  @include('layouts.head')
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @include('layouts.head')
+        <link rel="stylesheet" href="assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+        <link rel="stylesheet" href="assets/css/adminlte.min.css">
 
-  <link rel="stylesheet" href="assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <link rel="stylesheet" href="assets/css/adminlte.min.css">
+      </head>
+      <body class="hold-transition sidebar-mini layout-fixed">
+      <div class="wrapper">
 
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+          <img class="animation__shake" src="{{asset('assets/img/logobethesda.jpg')}}" alt="AdminLTELogo" height="60" width="60">
+        </div>
 
- @include('layouts.main-header')
+        @include('layouts.main-header')
 
-  <!-- Main Sidebar Container -->
-  @include('layouts.main-sidebar')
+        <!-- Main Sidebar Container -->
+        @include('layouts.main-sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -40,14 +44,13 @@
             <div class="row">
                 <div class="col-12">
                   <div class="callout callout-info">
-                    <h5><i class="fas fa-info"></i> Note:</h5>
-                    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+                    <h5><i class="fas fa-info"></i> Veuillez vérifier les informations:</h5>
                   </div>
                 </div>
             </div>
             <div class="card card-success">
                     <div class="card-header">
-                      <h3 class="card-title">Title</h3>
+                      <h3 class="card-title">Enregistrement d'un nouveau patient</h3>
 
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -63,7 +66,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                      Footer
+                      Valider
                     </div>
                     <!-- /.card-footer-->
                   </div>
