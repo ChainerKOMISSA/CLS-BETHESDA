@@ -54,7 +54,7 @@
 
                   <div class="info-box-content">
                     <span class="info-box-text">Patients</span>
-                    <span class="info-box-number">1,410</span>
+                    <span class="info-box-number">{{$countpatient}}</span>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
@@ -93,7 +93,7 @@
 
                   <div class="info-box-content">
                     <span class="info-box-text">Infirmiers</span>
-                    <span class="info-box-number">93,139</span>
+                    <span class="info-box-number">{{$countinf}}</span>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
@@ -105,11 +105,11 @@
         <!-- Main row -->
 
         <!--TABLEAU-->
-        <div class="card">
-            <div class="card-header text-white bg-success">
+            <img src="{{asset('assets/img/logobethesda.jpg')}}" alt="Logo Bethesda" height="300" width="300" class="rounded mx-auto d-block" style="margin-top: 170px;">
+        <!--<div class="card card-success">
+            <div class="card-header">
               <h3 class="card-title">Activités récentes</h3>
             </div>
-            <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -152,11 +152,8 @@
                 </tbody>
               </table>
             </div>
-            <!-- /.card-body -->
-          </div>
-
-
-          <!-- /.row (main row) -->
+          </div>-->
+<!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

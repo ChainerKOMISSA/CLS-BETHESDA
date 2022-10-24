@@ -45,7 +45,7 @@
           </li>
           <li class="nav-header">GYNECOLOGIE</li>
           <li class="nav-item">
-            <a href="iframe.html" class="nav-link">
+            <a href="{{route('newcpn')}}" class="nav-link">
               <i class="nav-icon fas fa-plus-square"></i>
               <p>Nouveau patient</p>
             </a>
@@ -85,6 +85,19 @@
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-plus"></i>
               <p>Autres</p>
+            </a>
+          </li>
+          <li class="nav-header">PERSONNEL</li>
+          <li class="nav-item">
+            <a href="iframe.html" class="nav-link">
+              <i class="nav-icon fas fa-plus-square"></i>
+              <p>Nouvel infirmier</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-user-md"></i>
+              <p>Liste des infirmiers</p>
             </a>
           </li>
         </ul>

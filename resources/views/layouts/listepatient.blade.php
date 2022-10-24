@@ -13,6 +13,10 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="{{asset('assets/img/logobethesda.jpg')}}" alt="AdminLTELogo" height="60" width="60">
+      </div>
 
  @include('layouts.main-header')
 
@@ -45,106 +49,54 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Liste des patients</h3>
-
           <div class="card-tools">
-            <ul class="pagination pagination-sm float-right">
-              <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
+            <a href="{{route('newpatient')}}" class="btn btn-success">Ajouter un nouveau patient</a>
           </div>
         </div>
         <!-- /.card-header -->
         <div class="card-body p-0">
-          <table class="table">
+            @if (session()->has("successDelete"))
+              <div class="alert alert-secondary">
+                <p><h3>{{session()->get('successDelete')}}</h3></p>
+              </div>
+              @endif
+          <table class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Numéro</th>
                 <th>Nom</th>
                 <th>Prénoms</th>
                 <th>Age</th>
+                <th>Quartier</th>
                 <th>Sexe</th>
                 <th>Téléphone</th>
               </tr>
             </thead>
             <tbody>
+                @foreach ($patients as $key => $patient)
               <tr>
-                <td>1</td>
-                <td>KOMISSA ZOTSU</td>
-                <td>Essi Chainer</td>
-                <td>21</td>
-                <td>F</td>
-                <td>93798240</td>
+                <th scope="row">{{++$key}}</th>
+                <td>{{$patient->nom}}</td>
+                <td>{{$patient->prenom}}</td>
+                <td>{{$patient->age}}</td>
+                <td>{{$patient->quartier}}</td>
+                <td>{{$patient->sexe}}</td>
+                <td>{{$patient->telephone}}</td>
                 <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        Voir
-                    </a>
-                    <a class="btn btn-success btn-sm" href="#">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Modifier
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Supprimer
-                    </a>
+                    <a class="btn btn-primary btn-sm" href="{{route('editpatient')}}"><i class="fas fa-folder"></i>Voir</a>
+
+                    <a class="btn btn-success btn-sm" href="{{route('modifypatient', ['patient'=>$patient->id])}}"><i class="fas fa-pencil-alt"></i>Modifier</a>
+
+                    <a class="btn btn-danger btn-sm" href="#" onclick="if(confirm('Voulez-vous vraiment supprimer ce patient?')){
+                        document.getElementById('form-{{$patient->id}}').submit()}"><i class="fas fa-trash"></i>Supprimer</a>
+
+                    <form id="form-{{$patient->id}}" action="{{route('deletepatient', ['patient'=>$patient->id])}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="_method" value="delete">
+                </form>
                 </td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>KOMISSA ZOTSU</td>
-                <td>Essi Chainer</td>
-                <td>21</td>
-                <td>F</td>
-                <td>93798240</td>
-                <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        Voir
-                    </a>
-                    <a class="btn btn-success btn-sm" href="#">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Modifier
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Supprimer
-                    </a>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>KOMISSA ZOTSU</td>
-                <td>Essi Chainer</td>
-                <td>21</td>
-                <td>F</td>
-                <td>93798240</td>
-                <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        Voir
-                    </a>
-                    <a class="btn btn-success btn-sm" href="#">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Modifier
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Supprimer
-                    </a>
-                </td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>

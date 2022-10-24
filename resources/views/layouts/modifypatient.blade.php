@@ -31,12 +31,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Consultation</h1>
+            <h1>Modification</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route("home")}}">Accueil</a></li>
-              <li class="breadcrumb-item active">Enregistrer un patient</li>
+              <li class="breadcrumb-item active">Modification d'un patient</li>
             </ol>
           </div>
         </div>
@@ -64,12 +64,13 @@
               @endif
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Enregistrer un nouveau patient</h3>
+                <h3 class="card-title">Modifier un  patient</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{route('ajoutpatient')}}">
+              <form method="POST" action="{{route('updatepatient', ['patient'=>$patient->id])}}">
                 @csrf
+                <input type="hidden" name="_method" value="put">
                 <div class="card-body">
                     <div class="row">
                         <div class="form-group col-md-8">
@@ -78,35 +79,35 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Température °C</label>
-                            <input type="number" step=".01" class="form-control" name="temp" required>
+                            <input type="number" step=".01" class="form-control" name="temp"  required>
                           </div>
                     </div>
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Nom du patient</label>
-                        <input type="text" class="form-control" name="nom" placeholder="Entrer le nom du patient" required>
+                        <input type="text" class="form-control" name="nom" placeholder="Entrer le nom du patient" value="{{$patient->nom}}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Prénoms du patient</label>
-                        <input type="text" class="form-control" name="prenom" placeholder="Entrer le prénom du patient" required>
+                        <input type="text" class="form-control" name="prenom" placeholder="Entrer le prénom du patient" value="{{$patient->prenom}}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Quartier</label>
-                        <input type="text" class="form-control" name="quartier" placeholder="Entrer le quartier du patient" required>
+                        <input type="text" class="form-control" name="quartier" placeholder="Entrer le quartier du patient" value="{{$patient->quartier}}" required>
                       </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Sexe</label>
-                        <input type="text" class="form-control" name="sexe" placeholder="Entrer le sexe du patient" required>
+                        <input type="text" class="form-control" name="sexe" placeholder="Entrer le sexe du patient" value="{{$patient->sexe}}" required>
                       </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Age du patient</label>
-                        <input type="number" class="form-control" name="age" required>
+                        <input type="number" class="form-control" name="age" value="{{$patient->age}}" required>
                       </div>
                       <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Téléphone du patient</label>
-                            <input type="text" class="form-control" name="telephone" placeholder="Entrer le contact du patient" required>
+                            <input type="text" class="form-control" name="telephone" placeholder="Entrer le contact du patient" value="{{$patient->telephone}}" required>
                       </div>
                 </div>
                 <div class="row">
@@ -127,7 +128,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="reset" class="btn btn-secondary">Annuler</button>
+                    <a href="{{route('listepatient')}}" class="btn btn-secondary">Annuler</a>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>
               </form>

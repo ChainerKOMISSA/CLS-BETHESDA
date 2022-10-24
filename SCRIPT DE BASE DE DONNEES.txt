@@ -1,0 +1,16 @@
+--TABLE PATIENT
+CREATE TABLE patient(
+id int primary key auto_increment,
+nom varchar(255) not null,
+prenom varchar(255) not null,
+age int not null,
+quartier varchar(255) not null,
+sexe varchar(20) not null,
+telephone varchar(255) not null)
+
+--TABLE INFIRMIER
+CREATE TABLE infirmier(
+id int primary key auto_increment,
+nom varchar(255) not null,
+prenom varchar(255) not null,
+grade varchar(255) not null)
