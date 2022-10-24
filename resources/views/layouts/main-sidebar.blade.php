@@ -64,7 +64,7 @@
           </li>
           <li class="nav-header">PHARMACIE</li>
           <li class="nav-item">
-            <a href="iframe.html" class="nav-link">
+            <a href="{{route('listecomprimes')}}" class="nav-link">
               <i class="nav-icon fas fa-tablets"></i>
               <p>Comprimés</p>
             </a>
@@ -89,13 +89,13 @@
           </li>
           <li class="nav-header">PERSONNEL</li>
           <li class="nav-item">
-            <a href="iframe.html" class="nav-link">
+            <a href="{{route('newinfirmier')}}" class="nav-link">
               <i class="nav-icon fas fa-plus-square"></i>
               <p>Nouvel infirmier</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('listeinfirmier')}}" class="nav-link">
               <i class="nav-icon fas fa-user-md"></i>
               <p>Liste des infirmiers</p>
             </a>

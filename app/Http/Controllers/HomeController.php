@@ -26,6 +26,18 @@ class HomeController extends Controller
     {
         $countpatient = DB::table('patient')->count();
         $countinf = DB::table('infirmier')->count();
-        return view('home', ['countpatient' => $countpatient], ['countinf' => $countinf]);
+        $countprod = DB::table('produit')->count();
+        $countrupture = DB::table('produit')
+                            ->select(DB::raw('COUNT(id) as Nbre'))
+                            ->where('qtestock', '<', 5)
+                            ->get();
+
+        //dd($countrupture);
+
+        return view('home')
+               ->with(compact('countprod'))
+               ->with(compact('countpatient'))
+               ->with(compact('countinf'))
+               ->with(compact('countrupture'));
     }
 }

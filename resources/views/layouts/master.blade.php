@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                  <span class="info-box-icon bg-info"><i class="fas fa-bed"></i></span>
+                  <span class="info-box-icon bg-success"><i class="fas fa-bed"></i></span>
 
                   <div class="info-box-content">
                     <span class="info-box-text">Patients</span>
@@ -63,11 +63,11 @@
               <!-- /.col -->
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                  <span class="info-box-icon bg-success"><i class="fas fa-capsules"></i></span>
+                  <span class="info-box-icon bg-secondary"><i class="fas fa-capsules"></i></span>
 
                   <div class="info-box-content">
                     <span class="info-box-text">Produits</span>
-                    <span class="info-box-number">410</span>
+                    <span class="info-box-number">{{$countprod}}</span>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
@@ -76,11 +76,11 @@
               <!-- /.col -->
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                  <span class="info-box-icon bg-warning"><i class="fas fa-baby"></i></span>
+                  <span class="info-box-icon bg-secondary"><i class="fas fa-baby"></i></span>
 
                   <div class="info-box-content">
                     <span class="info-box-text">Accouchements</span>
-                    <span class="info-box-number">13,648</span>
+                    <span class="info-box-number">0</span>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
@@ -89,7 +89,7 @@
               <!-- /.col -->
               <div class="col-md-3 col-sm-6 col-12">
                 <div class="info-box">
-                  <span class="info-box-icon bg-danger"><i class="fas fa-user-md"></i></span>
+                  <span class="info-box-icon bg-success"><i class="fas fa-user-md"></i></span>
 
                   <div class="info-box-content">
                     <span class="info-box-text">Infirmiers</span>
@@ -102,58 +102,65 @@
               <!-- /.col -->
         </div>
         <!-- /.row -->
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fas fa-procedures"></i></span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Patients en cours</span>
+                    <span class="info-box-number">0</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-secondary"><i class="fas fa-exclamation-triangle"></i></span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Alerte stock</span>
+                    <span class="info-box-number">5</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-secondary"><i class="fas fa-hand-holding-usd"></i></span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Traitements non soldés</span>
+                    <span class="info-box-number">0</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="fas fa-flask"></i></span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text">Analyses</span>
+                    <span class="info-box-number">0</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+        </div>
         <!-- Main row -->
 
         <!--TABLEAU-->
             <img src="{{asset('assets/img/logobethesda.jpg')}}" alt="Logo Bethesda" height="300" width="300" class="rounded mx-auto d-block" style="margin-top: 170px;">
-        <!--<div class="card card-success">
-            <div class="card-header">
-              <h3 class="card-title">Activités récentes</h3>
-            </div>
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th scope="col">Rendering engine</th>
-                  <th scope="col">Browser</th>
-                  <th scope="col">Platform(s)</th>
-                  <th scope="col">Engine version</th>
-                  <th scope="col">CSS grade</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>-->
-<!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

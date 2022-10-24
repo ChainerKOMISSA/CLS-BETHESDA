@@ -18,10 +18,6 @@ class PatientController extends Controller
         return view('layouts.modifypatient', compact("patient"));
     }
 
-     public function create(){
-
-    }
-
     public function store(REQUEST $request){
         $request->validate([
             "date"=>"required",
@@ -49,10 +45,6 @@ class PatientController extends Controller
         ]);
 
         return back()->with("success", "Patient ajouté avec succès!");
-    }
-
-    public function show($id){
-
     }
 
     public function edit(){
