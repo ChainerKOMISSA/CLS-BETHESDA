@@ -36,7 +36,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route("home")}}">Accueil</a></li>
-              <li class="breadcrumb-item active">Enregistrer un produit</li>
+              <li class="breadcrumb-item active">Modifier un produit</li>
             </ol>
           </div>
         </div>
@@ -64,25 +64,26 @@
               @endif
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Enregistrer un produit</h3>
+                <h3 class="card-title">Modifier un produit</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{route('ajoutproduit')}}">
+              <form method="POST" action="{{route('updateproduit', ['produit'=>$produit->id])}}">
                 @csrf
+                <input type="hidden" name="_method" value="put">
                 <div class="card-body">
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Nom du produit</label>
-                        <input type="text" class="form-control" name="nomproduit" placeholder="Entrer le nom" required>
+                        <input type="text" class="form-control" name="nomproduit" value="{{$produit->nomproduit}}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Indication</label>
-                        <input type="text" class="form-control" name="indication" placeholder="indication..." required>
+                        <input type="text" class="form-control" name="indication" value="{{$produit->indication}}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Prix du produit</label>
-                        <input type="number" class="form-control" name="prixproduit" placeholder="Entrer le prix" required>
+                        <input type="number" class="form-control" name="prixproduit" value="{{$produit->prixproduit}}" required>
                       </div>
                 </div>
                 <div class="row">
@@ -91,17 +92,21 @@
                         <select class="form-control" name="type_id">
                             <option> </option>
                             @foreach ($types as $type)
+                                @if($type->id == $produit->type_id)
+                                <option value="{{$type->id}}" selected>{{$type->libelle}}</option>
+                                @else
                                 <option value="{{$type->id}}">{{$type->libelle}}</option>
+                                @endif
                             @endforeach
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Quantité à ajouter</label>
-                        <input type="number" class="form-control" name="qtestock" placeholder="Entrer la quantité" required>
+                        <input type="number" class="form-control" name="qtestock" value="{{$produit->qtestock}}" required>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Quantité vendue</label>
-                        <input type="number" class="form-control" name="qtevendue" placeholder="Entrer la quantité" required>
+                        <input type="number" class="form-control" name="qtevendue" value="{{$produit->qtevendue}}" required>
                       </div>
                 </div>
                 </div>

@@ -12,5 +12,5 @@ class Analyse extends Model
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
 
-    protected $fillable = ["nom", "dezcription", "prix", "prixCMS"];
+    protected $fillable = ["nom", "description", "prix", "prixCMS"];
 }

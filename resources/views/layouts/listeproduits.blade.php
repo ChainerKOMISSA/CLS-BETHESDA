@@ -65,8 +65,10 @@
               <tr>
                 <th>Numéro</th>
                 <th>Nom du produit</th>
+                <th>Indication</th>
                 <th>Prix</th>
                 <th>Quantité en stock</th>
+                <th>Quantité vendue</th>
               </tr>
             </thead>
             <tbody>
@@ -74,8 +76,13 @@
               <tr>
                 <th scope="row">{{++$key}}</th>
                 <td>{{$produit->nomproduit}}</td>
+                <td>{{$produit->indication}}</td>
                 <td>{{$produit->prixproduit}}</td>
                 <td>{{$produit->qtestock}}</td>
+                <td>{{$produit->qtevendue}}</td>
+                <td class="project-actions text-right">
+                    <a class="btn btn-secondary btn-sm" href="{{route('modifyproduit', ['produit'=>$produit->id])}}"><i class="fas fa-pencil-alt"></i>Modifier</a>
+                </td>
               </tr>
               @endforeach
             </tbody>

@@ -31,12 +31,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Pharmacie</h1>
+            <h1>Analyses</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route("home")}}">Accueil</a></li>
-              <li class="breadcrumb-item active">Enregistrer un produit</li>
+              <li class="breadcrumb-item active">Nouvelle analyse</li>
             </ol>
           </div>
         </div>
@@ -64,51 +64,38 @@
               @endif
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Enregistrer un produit</h3>
+                <h3 class="card-title">Enregistrer une analyse</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{route('ajoutproduit')}}">
+              <form method="POST" action="{{route('ajoutanalyse')}}">
                 @csrf
                 <div class="card-body">
                 <div class="row">
-                    <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Nom du produit</label>
-                        <input type="text" class="form-control" name="nomproduit" placeholder="Entrer le nom" required>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Libellé</label>
+                        <input type="text" class="form-control" name="nom" placeholder="Entrer le libellé" required>
                       </div>
-                      <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Indication</label>
-                        <input type="text" class="form-control" name="indication" placeholder="indication..." required>
+                      <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Description</label>
+                        <input type="text" class="form-control" name="description" placeholder="Entrer la description" required>
                       </div>
-                      <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Prix du produit</label>
-                        <input type="number" class="form-control" name="prixproduit" placeholder="Entrer le prix" required>
-                      </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Type</label>
-                        <select class="form-control" name="type_id">
-                            <option> </option>
-                            @foreach ($types as $type)
-                                <option value="{{$type->id}}">{{$type->libelle}}</option>
-                            @endforeach
-                        </select>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Quantité à ajouter</label>
-                        <input type="number" class="form-control" name="qtestock" placeholder="Entrer la quantité" required>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Quantité vendue</label>
-                        <input type="number" class="form-control" name="qtevendue" placeholder="Entrer la quantité" required>
-                      </div>
-                </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Prix</label>
+                            <input type="number" class="form-control" name="prix" placeholder="Entrer le prix" required>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Prix CMS</label>
+                            <input type="number" class="form-control" name="prixCMS" placeholder="Entrer le prix" required>
+                          </div>
+                    </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <a href="{{route('listeproduits')}}" class="btn btn-secondary">Annuler</a>
+                    <a href="{{route('listeanalyses')}}" class="btn btn-secondary">Annuler</a>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>
               </form>

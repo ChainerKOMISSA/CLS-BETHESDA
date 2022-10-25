@@ -39,8 +39,6 @@ Route::get('/listeinfirmier', [App\Http\Controllers\ListeInfirmierController::cl
 
 Route::post('/ajoutinfirmier', [App\Http\Controllers\InfirmierController::class, 'store'])->name('ajoutinfirmier');
 
-Route::get('/editinfirmier', [App\Http\Controllers\InfirmierController::class, 'edit'])->name('editinfirmier');
-
 Route::delete('/deleteinfirmier/{infirmier}', [App\Http\Controllers\InfirmierController::class, 'delete'])->name('deleteinfirmier');
 
 Route::put('/updateinfirmier/{infirmier}', [App\Http\Controllers\InfirmierController::class, 'update'])->name('updateinfirmier');
@@ -67,10 +65,6 @@ Route::get('/newproduit', [App\Http\Controllers\ProduitController::class, 'creat
 
 Route::post('/ajoutproduit', [App\Http\Controllers\ProduitController::class, 'store'])->name('ajoutproduit');
 
-Route::get('/editproduit', [App\Http\Controllers\ProduitController::class, 'edit'])->name('editproduit');
-
-Route::delete('/deleteproduit/{produit}', [App\Http\Controllers\ProduitController::class, 'delete'])->name('deleteproduit');
-
 Route::put('/updateproduit/{produit}', [App\Http\Controllers\ProduitController::class, 'update'])->name('updateproduit');
 
 Route::get('/modifyproduit/{produit}', [App\Http\Controllers\ProduitController::class, 'modify'])->name('modifyproduit');
@@ -87,4 +81,13 @@ Route::get('/newcpn', [App\Http\Controllers\PatientGController::class, 'index'])
 
 //BOUTONS DU TABLEAU DE BORD
 Route::get('/analyses', [App\Http\Controllers\ListeAnalysesController::class, 'index'])->name('listeanalyses');
+
+Route::get('/newanalyse', [App\Http\Controllers\AnalyseController::class, 'index'])->name('newanalyse');
+
+Route::post('/ajoutanalyse', [App\Http\Controllers\AnalyseController::class, 'store'])->name('ajoutanalyse');
+
+Route::put('/updateanalyse/{analyse}', [App\Http\Controllers\AnalyseController::class, 'update'])->name('updateanalyse');
+
+Route::get('/modifyanalyse/{analyse}', [App\Http\Controllers\AnalyseController::class, 'modify'])->name('modifyanalyse');
+
 

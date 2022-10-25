@@ -79,9 +79,6 @@
                 <td>{{$sirop->prixproduit}}</td>
                 <td>{{$sirop->qtestock}}</td>
                 <td>{{$sirop->qtevendue}}</td>
-                <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="{{route('editproduit')}}"><i class="fas fa-folder"></i>Voir</a>
-                </td>
               </tr>
               @endforeach
             </tbody>

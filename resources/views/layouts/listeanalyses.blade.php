@@ -50,7 +50,7 @@
         <div class="card-header">
           <h3 class="card-title">Analyses disponibles</h3>
           <div class="card-tools">
-            <a href="{{route('newproduit')}}" class="btn btn-success">Nouvelle analyse</a>
+            <a href="{{route('newanalyse')}}" class="btn btn-success">Nouvelle analyse</a>
           </div>
         </div>
         <!-- /.card-header -->
@@ -78,6 +78,9 @@
                 <td>{{$analyse->description}}</td>
                 <td>{{$analyse->prix}}</td>
                 <td>{{$analyse->prixCMS}}</td>
+                <td class="project-actions text-right">
+                    <a class="btn btn-success btn-sm" href="{{route('modifyanalyse', ['analyse'=>$analyse->id])}}"><i class="fas fa-folder"></i>Modifier</a>
+                </td>
               </tr>
               @endforeach
             </tbody>

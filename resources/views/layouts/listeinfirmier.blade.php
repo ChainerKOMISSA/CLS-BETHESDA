@@ -77,11 +77,9 @@
                 <td>{{$infirmier->prenom}}</td>
                 <td>{{$infirmier->grade}}</td>
                 <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="{{route('editinfirmier')}}"><i class="fas fa-folder"></i>Voir</a>
-
                     <a class="btn btn-success btn-sm" href="{{route('modifyinfirmier', ['infirmier'=>$infirmier->id])}}"><i class="fas fa-pencil-alt"></i>Modifier</a>
 
-                    <a class="btn btn-danger btn-sm" href="#" onclick="if(confirm('Voulez-vous vraiment supprimer cet infirmier?')){
+                    <a class="btn btn-secondary btn-sm" href="#" onclick="if(confirm('Voulez-vous vraiment supprimer cet infirmier?')){
                         document.getElementById('form-{{$infirmier->id}}').submit()}"><i class="fas fa-trash"></i>Supprimer</a>
 
                     <form id="form-{{$infirmier->id}}" action="{{route('deleteinfirmier', ['infirmier'=>$infirmier->id])}}" method="POST">

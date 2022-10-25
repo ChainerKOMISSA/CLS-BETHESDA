@@ -79,9 +79,6 @@
                 <td>{{$comprime->prixproduit}}</td>
                 <td>{{$comprime->qtestock}}</td>
                 <td>{{$comprime->qtevendue}}</td>
-                <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="{{route('editproduit')}}"><i class="fas fa-folder"></i>Voir</a>
-                </td>
               </tr>
               @endforeach
             </tbody>

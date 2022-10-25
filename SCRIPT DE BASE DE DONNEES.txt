@@ -71,3 +71,28 @@ CREATE TABLE analyse(
     description varchar(255) not null,
     prix int not null
 )
+
+
+
+
+
+
+<li class="nav-header">GYNECOLOGIE</li>
+          <li class="nav-item">
+            <a href="{{route('newcpn')}}" class="nav-link">
+              <i class="nav-icon fas fa-plus-square"></i>
+              <p>Nouveau patient</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-procedures"></i>
+              <p>Patients en cours</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Liste des accouchements</p>
+            </a>
+          </li>

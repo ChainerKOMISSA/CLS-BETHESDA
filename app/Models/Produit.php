@@ -11,10 +11,10 @@ class Produit extends Model
     protected $table = 'produit';
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
-    protected $fillable = ["nomproduit", "prixproduit", "type_id"];
+    protected $fillable = ["nomproduit", "indication", "prixproduit", "type_id", "qtestock", "qtevendue"];
 
     public function type(){
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class, 'id');
     }
 
 }

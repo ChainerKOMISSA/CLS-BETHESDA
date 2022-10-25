@@ -13,7 +13,7 @@ class Type extends Model
     protected $connection = 'mysql';
     protected $fillable = ["idtype", "libelle"];
 
-    public function produit(){
+    public function produits(){
         return $this->hasMany(Produit::class);
     }
 

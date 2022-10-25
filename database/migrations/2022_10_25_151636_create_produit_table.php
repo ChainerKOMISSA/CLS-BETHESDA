@@ -16,12 +16,15 @@ class CreateProduitTable extends Migration
         Schema::create('produit', function (Blueprint $table) {
             $table->id();
             $table->string("nomproduit");
+            $table->string("indication");
             $table->integer("prixproduit");
-            $table->integer("type_id");
+            $table->foreignId("type_id")->constrained("type");
             $table->integer("qtestock");
             $table->integer("qtevendue");
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -31,6 +34,9 @@ class CreateProduitTable extends Migration
      */
     public function down()
     {
+        Schema::table("produit", function(Blueprint $table){
+            $table->dropForeign("type_id");
+        });
         Schema::dropIfExists('produit');
     }
 }
