@@ -5,12 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Produit;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProduitController extends Controller
 {
     public function index(){
+        $produits = DB::table('produit')->get();
 
-        return view('layouts.newproduit');
+        return view('layouts.listeproduits', compact('produits'));
+    }
+
+    public function index2(){
+        $ruptures = DB::table('produit')
+                        ->select('*')
+                        ->where('qtestock', '<', 5)
+                        ->get();
+
+        return view('layouts.listerupture', compact('ruptures'));
     }
 
     public function modify(Produit $produit){

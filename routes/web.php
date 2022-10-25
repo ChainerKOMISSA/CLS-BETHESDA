@@ -59,6 +59,10 @@ Route::get('/listeinjectable', [App\Http\Controllers\ListeInjectableController::
 
 Route::get('/listeautre', [App\Http\Controllers\ListeAutreController::class, 'index'])->name('listeautre');
 
+Route::get('/listeproduits', [App\Http\Controllers\ProduitController::class, 'index'])->name('listeproduits');
+
+Route::get('/listerupture', [App\Http\Controllers\ProduitController::class, 'index2'])->name('listerupture');
+
 Route::get('/newproduit', [App\Http\Controllers\ProduitController::class, 'create'])->name('newproduit');
 
 Route::post('/ajoutproduit', [App\Http\Controllers\ProduitController::class, 'store'])->name('ajoutproduit');
@@ -81,6 +85,6 @@ Route::get('/newcpn', [App\Http\Controllers\PatientGController::class, 'index'])
 
 
 
-
-
+//BOUTONS DU TABLEAU DE BORD
+Route::get('/analyses', [App\Http\Controllers\ListeAnalysesController::class, 'index'])->name('listeanalyses');
 

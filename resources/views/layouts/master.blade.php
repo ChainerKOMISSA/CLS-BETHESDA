@@ -48,119 +48,137 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-success"><i class="fas fa-bed"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Patients</span>
-                    <span class="info-box-number">{{$countpatient}}</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>{{$countpatient}}</h3>
+                    <p>Patients</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-bed"></i>
+                  </div>
+                  <a href="{{route('listepatient')}}" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-secondary"><i class="fas fa-capsules"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Produits</span>
-                    <span class="info-box-number">{{$countprod}}</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                  <div class="inner">
+                    <h3>{{$countprod}}</h3>
+                    <p>Produits</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-capsules"></i>
+                  </div>
+                  <a href="{{route('listeproduits')}}" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-secondary"><i class="fas fa-baby"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Accouchements</span>
-                    <span class="info-box-number">0</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                  <div class="inner">
+                    <h3>0</h3>
+                    <p>Accouchements</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-baby"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-success"><i class="fas fa-user-md"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Infirmiers</span>
-                    <span class="info-box-number">{{$countinf}}</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>{{$countinf}}</h3>
+                    <p>Infirmiers</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-user-md"></i>
+                  </div>
+                  <a href="{{route('listeinfirmier')}}" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
+
         </div>
         <!-- /.row -->
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-success"><i class="fas fa-procedures"></i></span>
-
-                  <div class="info-box-content">
-                    <span class="info-box-text">Patients en cours</span>
-                    <span class="info-box-number">0</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>0</h3>
+                    <p>Patients en cours</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-procedures"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-secondary"><i class="fas fa-exclamation-triangle"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Alerte stock</span>
-                    <span class="info-box-number">5</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                  <div class="inner">
+                    <h3 class="small-box-number">{{$countrupture}}</h3>
+                    <p>Alerte stock</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <a href="{{route('listerupture')}}" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-secondary"><i class="fas fa-hand-holding-usd"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Traitements non soldés</span>
-                    <span class="info-box-number">0</span>
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                  <div class="inner">
+                    <h3>0</h3>
+                    <p>Traitements non soldés</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                  <span class="info-box-icon bg-success"><i class="fas fa-flask"></i></span>
 
-                  <div class="info-box-content">
-                    <span class="info-box-text">Analyses</span>
-                    <span class="info-box-number">0</span>
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>Analyses</h3>
+                    <p>Cliquez pour voir les détails</p>
                   </div>
-                  <!-- /.info-box-content -->
+                  <div class="icon">
+                    <i class="fas fa-flask"></i>
+                  </div>
+                  <a href="{{route('listeanalyses')}}" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
                 </div>
-                <!-- /.info-box -->
               </div>
               <!-- /.col -->
         </div>
         <!-- Main row -->
 
         <!--TABLEAU-->
-            <img src="{{asset('assets/img/logobethesda.jpg')}}" alt="Logo Bethesda" height="300" width="300" class="rounded mx-auto d-block" style="margin-top: 170px;">
+           <!-- <img src="{{asset('assets/img/logobethesda.jpg')}}" alt="Logo Bethesda" height="300" width="300" class="rounded mx-auto d-block" style="margin-top: 170px;">-->
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

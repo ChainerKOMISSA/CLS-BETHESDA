@@ -54,12 +54,6 @@ ADD CONSTRAINT FK_PRODUIT FOREIGN KEY (idproduit) REFERENCES produit(idproduit)
 
 
 
-
-
-
-
-
-
 --TABLE PATIENTG
 CREATE TABLE patientG(
 idpatientg int primary key auto_increment,
@@ -68,3 +62,12 @@ prenom varchar(255) not null,
 age int not null,
 quartier varchar(255) not null,
 telephone varchar(255) not null)
+
+
+--TABLE ANALYSE
+CREATE TABLE analyse(
+    id int primary key auto_increment,
+    libelle varchar(255) not null,
+    description varchar(255) not null,
+    prix int not null
+)

@@ -68,6 +68,12 @@
               <p>Autres</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('listeproduits')}}" class="nav-link">
+              <i class="nav-icon fas fa-plus"></i>
+              <p>Stock</p>
+            </a>
+          </li>
           <li class="nav-header">GYNECOLOGIE</li>
           <li class="nav-item">
             <a href="{{route('newcpn')}}" class="nav-link">
