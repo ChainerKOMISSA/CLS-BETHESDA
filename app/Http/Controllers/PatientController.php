@@ -83,9 +83,8 @@ class PatientController extends Controller
 
     public function delete($patient){
         Patient::find($patient)->delete();
-        $nomcomplet = $patient->nom . " " . $patient->prenom;
 
-        return back()->with("successDelete", "Le patient '$nomcomplet' a été supprimé!");
+        return back()->with("successDelete", "Le patient a été supprimé!");
     }
 
 

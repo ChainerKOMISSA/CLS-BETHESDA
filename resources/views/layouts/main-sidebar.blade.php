@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{asset('assets/img/logobethesda.jpg')}}" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">CLS BETHESDA</span>
+      <span class="brand-text font-weight-light">CMS BETHESDA</span>
     </a>
 
     <!-- Sidebar -->
@@ -28,7 +28,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-procedures"></i>
               <p>
                 Patients en cours
@@ -41,6 +41,31 @@
               <p>
                 Liste des patients
               </p>
+            </a>
+          </li>
+          <li class="nav-header">PHARMACIE</li>
+          <li class="nav-item">
+            <a href="{{route('listecomprimes')}}" class="nav-link">
+              <i class="nav-icon fas fa-tablets"></i>
+              <p>Comprimés</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('listesirop')}}" class="nav-link">
+              <i class="nav-icon fas fa-vial"></i>
+              <p>Sirop</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('listeinjectables')}}" class="nav-link">
+              <i class="nav-icon fas fa-syringe"></i>
+              <p>Injectables</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('listeautre')}}" class="nav-link">
+              <i class="nav-icon fas fa-plus"></i>
+              <p>Autres</p>
             </a>
           </li>
           <li class="nav-header">GYNECOLOGIE</li>
@@ -60,31 +85,6 @@
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Liste des accouchements</p>
-            </a>
-          </li>
-          <li class="nav-header">PHARMACIE</li>
-          <li class="nav-item">
-            <a href="{{route('listecomprimes')}}" class="nav-link">
-              <i class="nav-icon fas fa-tablets"></i>
-              <p>Comprimés</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-vial"></i>
-              <p>Sirop</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-syringe"></i>
-              <p>Injectables</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-plus"></i>
-              <p>Autres</p>
             </a>
           </li>
           <li class="nav-header">PERSONNEL</li>

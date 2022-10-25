@@ -53,6 +53,12 @@ Route::get('/modifyinfirmier/{infirmier}', [App\Http\Controllers\InfirmierContro
 //PHARMACIE
 Route::get('/listecomprimes', [App\Http\Controllers\ListeComprimesController::class, 'index'])->name('listecomprimes');
 
+Route::get('/listesirop', [App\Http\Controllers\ListeSiropController::class, 'index'])->name('listesirop');
+
+Route::get('/listeinjectable', [App\Http\Controllers\ListeInjectableController::class, 'index'])->name('listeinjectables');
+
+Route::get('/listeautre', [App\Http\Controllers\ListeAutreController::class, 'index'])->name('listeautre');
+
 Route::get('/newproduit', [App\Http\Controllers\ProduitController::class, 'create'])->name('newproduit');
 
 Route::post('/ajoutproduit', [App\Http\Controllers\ProduitController::class, 'store'])->name('ajoutproduit');

@@ -35,7 +35,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-              <li class="breadcrumb-item active">Liste des comprimés</li>
+              <li class="breadcrumb-item active">Liste des sirops</li>
             </ol>
           </div>
         </div>
@@ -48,9 +48,9 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Liste des comprimés</h3>
+          <h3 class="card-title">Liste des sirops</h3>
           <div class="card-tools">
-            <a href="{{route('newproduit')}}" class="btn btn-primary">Vendre un comprimé</a>
+            <a href="{{route('newproduit')}}" class="btn btn-primary">Vendre un sirop</a>
             <a href="{{route('newproduit')}}" class="btn btn-success">Ajouter un nouveau produit</a>
           </div>
         </div>
@@ -72,13 +72,13 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($comprimes as $key => $comprime)
+                @foreach ($sirops as $key => $sirop)
               <tr>
                 <th scope="row">{{++$key}}</th>
-                <td>{{$comprime->nomproduit}}</td>
-                <td>{{$comprime->prixproduit}}</td>
-                <td>{{$comprime->qtestock}}</td>
-                <td>{{$comprime->qtevendue}}</td>
+                <td>{{$sirop->nomproduit}}</td>
+                <td>{{$sirop->prixproduit}}</td>
+                <td>{{$sirop->qtestock}}</td>
+                <td>{{$sirop->qtevendue}}</td>
                 <td class="project-actions text-right">
                     <a class="btn btn-primary btn-sm" href="{{route('editproduit')}}"><i class="fas fa-folder"></i>Voir</a>
                 </td>
