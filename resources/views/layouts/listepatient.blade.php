@@ -50,7 +50,9 @@
         <div class="card-header">
           <h3 class="card-title">Liste des patients</h3>
           <div class="card-tools">
-            <a href="{{route('newpatient')}}" class="btn btn-success">Ajouter un nouveau patient</a>
+            <a href="{{route('newtraitement')}}" class="btn btn-success">Commencer un traitement</a>
+            <a href="{{route('newanalyse')}}" class="btn btn-primary">Prescrire une ordonnance</a>
+            <a href="{{route('newpatient')}}" class="btn btn-secondary">Ajouter un nouveau patient</a>
           </div>
         </div>
         <!-- /.card-header -->

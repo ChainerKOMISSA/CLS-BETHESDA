@@ -91,3 +91,16 @@ Route::put('/updateanalyse/{analyse}', [App\Http\Controllers\AnalyseController::
 Route::get('/modifyanalyse/{analyse}', [App\Http\Controllers\AnalyseController::class, 'modify'])->name('modifyanalyse');
 
 
+//TRAITEMENT
+Route::get('/newtraitement', [App\Http\Controllers\TraitementController::class, 'index'])->name('newtraitement');
+
+
+
+
+//VENTE DE PRODUIT
+Route::get('/venteproduit', [App\Http\Controllers\VenteController::class, 'index'])->name('venteproduit');
+
+
+
+//FACTURE
+Route::get('/facture', [App\Http\Controllers\FactureController::class, 'index'])->name('facture');

@@ -15,6 +15,11 @@ class CreateTraitementTable extends Migration
     {
         Schema::create('traitement', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("patient_id")->constrained("patient");
+            $table->date("date");
+            $table->string("plaintes");
+            $table->string("diagnostic");
+            $table->string("statut");
             $table->timestamps();
         });
     }

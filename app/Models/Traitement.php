@@ -12,4 +12,5 @@ class Traitement extends Model
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
     
+    protected $fillable = ["patient_id", "date", "plaintes", "diagnostic", "statut"];
 }

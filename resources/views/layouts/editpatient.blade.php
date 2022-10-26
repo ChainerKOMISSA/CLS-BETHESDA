@@ -30,12 +30,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Tableau de bord</h1>
+            <h1 class="m-0">Détails du patient</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
-              <li class="breadcrumb-item active">Tableau de bord</li>
+              <li class="breadcrumb-item active">Détails du patient</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -46,41 +46,128 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Main row -->
         <div class="row">
-            <div class="card card-success card-outline col-md-5">
+            <div class="card card-secondary col-md-12">
                 <div class="card-header">
-                  <h3 class="card-title">Read Mail</h3>
-                </div>
-                <!-- /.card-header -->
-                  <div class="mailbox-read-message">
-                    <p>Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird
-                      on it aesthetic, bitters brunch meggings vegan iPhone. Dreamcatcher vegan scenester mlkshk. Ethical
-                      master cleanse Bushwick, occupy Thundercats banjo cliche ennui farm-to-table mlkshk fanny pack
-                      gluten-free. Marfa butcher vegan quinoa, bicycle rights disrupt tofu scenester chillwave 3 wolf moon
-                      asymmetrical taxidermy pour-over. Quinoa tote bag fashion axe, Godard disrupt migas church-key tofu
-                      blog locavore. Thundercats cronut polaroid Neutra tousled, meh food truck selfies narwhal American
-                      Apparel.</p>
-                  </div>
-                  <!-- /.mailbox-read-message -->
+                <h3 class="card-title">Paramètres</h3>
             </div>
-            <div class="col-md-2"></div>
-            <div class="card card-success card-outline col-md-5">
-                <div class="card-header">
-                  <h3 class="card-title">Read Mail</h3>
+            <div class="card-body">
+                    <form method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">Nom du patient</label>
+                                <input type="text" class="form-control" name="nom">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">Prénoms du patient</label>
+                                <input type="text" class="form-control" name="prenom" placeholder="Entrer le prénom du patient">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">Quartier</label>
+                                <input type="text" class="form-control" name="quartier" placeholder="Entrer le quartier du patient">
+                              </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">Sexe</label>
+                                <input type="text" class="form-control" name="sexe" placeholder="Entrer le sexe du patient" required>
+                              </div>
+                            <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">Age du patient</label>
+                                <input type="number" class="form-control" name="age" required>
+                              </div>
+                              <div class="form-group col-md-4">
+                                    <label for="exampleInputEmail1">Téléphone du patient</label>
+                                    <input type="text" class="form-control" name="telephone" placeholder="Entrer le contact du patient" required>
+                              </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">Poids du patient</label>
+                                <input type="number" step=".01" class="form-control" name="poids" required>
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">TA (droit)</label>
+                                <input type="text" class="form-control" name="tadroit" placeholder="Tension artérielle droit" required>
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="exampleInputEmail1">TA (gauche)</label>
+                                <input type="text" class="form-control" name="tagauche" placeholder="Tension artérielle gauche" required>
+                              </div>
+                        </div>
+                    </form>
                 </div>
-                <!-- /.card-header -->
-                  <div class="mailbox-read-message">
-                    <p>Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird
-                      on it aesthetic, bitters brunch meggings vegan iPhone. Dreamcatcher vegan scenester mlkshk. Ethical
-                      master cleanse Bushwick, occupy Thundercats banjo cliche ennui farm-to-table mlkshk fanny pack
-                      gluten-free. Marfa butcher vegan quinoa, bicycle rights disrupt tofu scenester chillwave 3 wolf moon
-                      asymmetrical taxidermy pour-over. Quinoa tote bag fashion axe, Godard disrupt migas church-key tofu
-                      blog locavore. Thundercats cronut polaroid Neutra tousled, meh food truck selfies narwhal American
-                      Apparel.</p>
-                  </div>
             </div>
         </div>
+        <!-- Main row -->
+        <br>
+        <br>
+        <div class="row">
+            <!-- general form elements disabled -->
+            <div class="card card-success col-md-5">
+                <div class="card-header">
+                <h3 class="card-title">Plaintes</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                <label>Le patient se plaint de...</label>
+                                <textarea class="form-control" rows="5" placeholder="..." name="plaintes"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <div class="col-md-1"></div>
+                        <!-- general form elements disabled -->
+                        <div class="card card-success col-md-5">
+                            <div class="card-header">
+                            <h3 class="card-title">DIagnostic</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                            <label>Diagnostic préalable</label>
+                                            <textarea class="form-control" rows="2" placeholder="..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!-- text input -->
+                                            <div class="form-group">
+                                            <label>Analyses demandées</label>
+                                            <select name="" id="" class="form-control">
+                                                <option value= null selected>Sélectionnez une analyse</option>
+                                                @foreach ($analyses as $analyse)
+                                                    <option value="{{$analyse->id}}">{{$analyse->nom}}</option>
+                                                @endforeach
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+        </div>
+        <br>
+        <br>
+        <div class="card-tools">
+            <a href="{{route('newtraitement')}}" class="btn btn-success">Commencer le traitement</a>
+            <a href="{{route('newanalyse')}}" class="btn btn-primary">Prescrire une ordonnance</a>
+            <a href="{{route('listepatient')}}" class="btn btn-secondary">Retour</a>
+          </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>

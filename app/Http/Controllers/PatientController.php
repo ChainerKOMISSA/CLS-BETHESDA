@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Analyse;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Symfony\Component\Console\Input\Input;
 
 class PatientController extends Controller
 {
@@ -47,8 +49,14 @@ class PatientController extends Controller
         return back()->with("success", "Patient ajouté avec succès!");
     }
 
-    public function edit(){
-        return view('layouts.editpatient');
+    public function edit(REQUEST $request){
+        /*$data = Http::get('http://127.0.0.1:8000/listepatient', [
+            "nom"=>$request->nom
+        ]);*/
+
+        $patient = Patient::all();
+        $analyses = Analyse::all();
+        return view('layouts.editpatient', compact("patient","analyses"));
     }
 
 
@@ -86,6 +94,7 @@ class PatientController extends Controller
 
         return back()->with("successDelete", "Le patient a été supprimé!");
     }
+
 
 
 }

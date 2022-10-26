@@ -51,7 +51,6 @@
           <h3 class="card-title">Liste des comprimés</h3>
           <div class="card-tools">
             <a href="{{route('listeproduits')}}" class="btn btn-secondary">Liste des produits</a>
-            <a href="{{route('newproduit')}}" class="btn btn-primary">Vendre un comprimé</a>
             <a href="{{route('newproduit')}}" class="btn btn-success">Ajouter un nouveau produit</a>
           </div>
         </div>
