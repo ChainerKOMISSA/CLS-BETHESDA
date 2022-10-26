@@ -113,7 +113,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <a href="{{route('listeproduits')}}" class="btn btn-secondary">Annuler</a>
+                    <a href="{{route('listeproduits')}}" class="btn btn-secondary">Retour</a>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                 </div>
               </form>

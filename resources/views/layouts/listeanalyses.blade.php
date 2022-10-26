@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="assets/css/adminlte.min.css">
+  <link rel="stylesheet" href="assets/css/newcss.css">
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -46,6 +48,9 @@
     <section class="content">
 
       <!-- Default box -->
+      <div class="form-group">
+        <input id="searchbar" onkeyup="search_analyse()" type="text" name="search" placeholder="Rechercher...">
+        </div>
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Analyses disponibles</h3>
@@ -74,7 +79,7 @@
                 @foreach ($analyses as $key => $analyse)
               <tr>
                 <th scope="row">{{++$key}}</th>
-                <td>{{$analyse->nom}}</td>
+                <td class="nomanalyse">{{$analyse->nom}}</td>
                 <td>{{$analyse->description}}</td>
                 <td>{{$analyse->prix}}</td>
                 <td>{{$analyse->prixCMS}}</td>
@@ -114,6 +119,9 @@
 <!-- AdminLTE App -->
 <script src="{{URL::asset('assets/js/adminlte.min.js')}}"></script>
 <!-- Page specific script -->
+
+<script src="{{URL::asset('assets/js/newjs.js')}}"></script>
+
 <script>
 $(function () {
   bsCustomFileInput.init();
