@@ -94,7 +94,15 @@ Route::get('/modifyanalyse/{analyse}', [App\Http\Controllers\AnalyseController::
 //TRAITEMENT
 Route::get('/newtraitement', [App\Http\Controllers\TraitementController::class, 'index'])->name('newtraitement');
 
+Route::post('/ajouttraitement', [App\Http\Controllers\TraitementController::class, 'store'])->name('ajouttraitement');
 
+Route::get('/listetraitement', [App\Http\Controllers\TraitementController::class, 'show'])->name('listetraitement');
+
+Route::get('/nonsoldes', [App\Http\Controllers\TraitementController::class, 'nonsoldes'])->name('nonsoldes');
+
+Route::put('/updatetraitement/{traitement}', [App\Http\Controllers\TraitementController::class, 'update'])->name('updatetraitement');
+
+Route::get('/modifytraitement/{traitement}', [App\Http\Controllers\TraitementController::class, 'modify'])->name('modifytraitement');
 
 
 //VENTE DE PRODUIT

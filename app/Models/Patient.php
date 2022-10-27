@@ -12,6 +12,9 @@ class Patient extends Model
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
     protected $fillable = ["nom", "prenom", "age", "quartier", "sexe", "telephone"];
-    //protected $hidden = ["temp", "poids", "tadroit", "tagauche"];
+
+    public function traitements(){
+        return $this->hasMany(Traitement::class);
+    }
 
 }

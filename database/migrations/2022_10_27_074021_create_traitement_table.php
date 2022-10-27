@@ -15,11 +15,15 @@ class CreateTraitementTable extends Migration
     {
         Schema::create('traitement', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("patient_id")->constrained("patient");
             $table->date("date");
+            $table->foreignId("patient_id")->constrained("patient");
             $table->string("plaintes");
+            $table->foreignId("analyse_id")->constrained("analyse");
+            $table->string("resultat");
             $table->string("diagnostic");
-            $table->string("statut");
+            $table->foreignId("produit_id")->constrained("produit");
+            $table->integer("montant");
+            $table->string("paiement");
             $table->timestamps();
         });
     }

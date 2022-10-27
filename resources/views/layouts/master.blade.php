@@ -116,13 +116,13 @@
               <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>0</h3>
-                    <p>Patients en cours</p>
+                    <h3>{{$counttraitement}}</h3>
+                    <p>Liste des soins</p>
                   </div>
                   <div class="icon">
                     <i class="fas fa-procedures"></i>
                   </div>
-                  <a href="#" class="small-box-footer">
+                  <a href="{{route('listetraitement')}}" class="small-box-footer">
                     En savoir plus <i class="fas fa-arrow-circle-right"></i>
                   </a>
                 </div>
@@ -131,7 +131,7 @@
               <div class="col-lg-3 col-6">
                 <div class="small-box bg-secondary">
                   <div class="inner">
-                    <h3 class="small-box-number">{{$countrupture}}</h3>
+                    <h3>{{$countrupture}}</h3>
                     <p>Alerte stock</p>
                   </div>
                   <div class="icon">
@@ -146,13 +146,13 @@
               <div class="col-lg-3 col-6">
                 <div class="small-box bg-secondary">
                   <div class="inner">
-                    <h3>0</h3>
+                    <h3>{{$nonsoldes}}</h3>
                     <p>Traitements non soldés</p>
                   </div>
                   <div class="icon">
                     <i class="fas fa-hand-holding-usd"></i>
                   </div>
-                  <a href="#" class="small-box-footer">
+                  <a href="{{route('nonsoldes')}}" class="small-box-footer">
                     En savoir plus <i class="fas fa-arrow-circle-right"></i>
                   </a>
                 </div>

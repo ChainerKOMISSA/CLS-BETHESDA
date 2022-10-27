@@ -37,7 +37,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route("home")}}">Accueil</a></li>
-              <li class="breadcrumb-item active">Commencer un Traitement</li>
+              <li class="breadcrumb-item active">Modifier un traitement</li>
             </ol>
           </div>
         </div>
@@ -65,7 +65,7 @@
               @endif
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Enregistrer un traitement</h3>
+                <h3 class="card-title">Modifier un traitement</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -75,20 +75,24 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Date du traitement</label>
-                            <input type="date" name="date" class="form-control" required >
+                            <input type="date" name="date" class="form-control" value="{{$traitement->date}}" required >
                           </div>
                           <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Nom du patient</label>
                             <select name="patient_id" class="form-control">
                                 <option value="">Sélectionnez un patient</option>
                                 @foreach ($patients as $patient)
-                                <option value="{{$patient->id}}">{{$patient->nom}} {{$patient->prenom}}</option>
+                                    @if($patient->id == $traitement->patient_id)
+                                    <option value="{{$patient->id}}" selected>{{$patient->nom}} {{$patient->prenom}}</option>
+                                    @else
+                                    <option value="{{$patient->id}}">{{$patient->nom}} {{$patient->prenom}}</option>
+                                    @endif
                                 @endforeach
                             </select>
                           </div>
                           <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Plaintes</label>
-                            <input name="plaintes" id="" class="form-control"/>
+                            <input type="text" name="plaintes" id="" class="form-control" value="{{$traitement->plaintes}}"/>
                           </div>
                     </div>
                 <div class="row">
@@ -97,17 +101,21 @@
                         <select name="analyse_id" class="form-control">
                             <option value="">Sélectionnez l'analyse</option>
                             @foreach ($analyses as $analyse)
-                            <option value="{{$analyse->id}}">{{$analyse->nom}}</option>
+                                @if ($analyse->id == $traitement->analyse_id)
+                                <option value="{{$analyse->id}}" selected>{{$analyse->nom}}</option>
+                                @else
+                                <option value="{{$analyse->id}}">{{$analyse->nom}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Résultat de l'analyse</label>
-                        <input type="text" name="resultat" class="form-control">
+                        <input type="text" name="resultat" class="form-control" value="{{$traitement->resultat}}">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Diagnostic final</label>
-                        <input name="diagnostic" id="" rows="1" class="form-control"/>
+                        <input type="text" name="diagnostic" id="" class="form-control" value="{{$traitement->diagnostic}}"/>
                     </div>
                 </div>
                 <div class="row">
@@ -115,13 +123,17 @@
                         <label for="exampleInputEmail1">Produits utilisés</label>
                         <select name="produit_id" id="testSelect1" class="form-control">
                             @foreach ($dispos as $dispo)
-                            <option value="{{$dispo->id}}">{{$dispo->nomproduit}}  {{$dispo->prixproduit}}fr</option>
+                                @if ($dispo->id == $traitement->produit_id)
+                                <option value="{{$dispo->id}}" selected>{{$dispo->nomproduit}}</option>
+                                @else
+                                <option value="{{$dispo->id}}">{{$dispo->nomproduit}}</option>
+                                @endif
                             @endforeach
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Montant total</label>
-                        <input type="number" name="montant" class="form-control">
+                        <input type="number" name="montant" class="form-control" value="{{$traitement->montant}}">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Paiement</label>

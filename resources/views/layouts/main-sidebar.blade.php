@@ -28,10 +28,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{route('listetraitement')}}" class="nav-link">
               <i class="nav-icon fas fa-procedures"></i>
               <p>
-                Patients en cours
+                Liste des soins
               </p>
             </a>
           </li>

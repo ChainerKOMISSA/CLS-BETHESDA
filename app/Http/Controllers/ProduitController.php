@@ -12,15 +12,8 @@ class ProduitController extends Controller
     public function index(){
 
         $produits = DB::table('produit')->get();
-        $stock = DB::table('produit')
-                    ->select('qtestock')
-                    ->get();
 
-        $stock == '0'? 'Indisponible' : 'Disponible';
-
-        //dd($stock);
-
-        return view('layouts.listeproduits', compact('produits', 'stock'));
+        return view('layouts.listeproduits', compact('produits'));
     }
 
     public function create(){

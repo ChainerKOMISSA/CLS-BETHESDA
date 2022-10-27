@@ -8,9 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Traitement extends Model
 {
     use HasFactory;
-    protected $table = 'patient';
+    protected $table = 'traitement';
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
-    
-    protected $fillable = ["patient_id", "date", "plaintes", "diagnostic", "statut"];
+
+    protected $fillable = ["date", "patient_id", "plaintes", "diagnostic", "analyse_id", "resultat", "diagnostic", "produit_id", "montant", "paiement"];
+
+    public function patient(){
+        return $this->belongsTo(Patient::class);
+    }
 }

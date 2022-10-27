@@ -27,19 +27,27 @@ class HomeController extends Controller
         $countpatient = DB::table('patient')->count();
         $countinf = DB::table('infirmier')->count();
         $countprod = DB::table('produit')->count();
+
         $countrupt = DB::table('produit')
                             ->select(DB::raw('COUNT(id) as Nbre'))
                             ->where('qtestock', '<', 5)
                             ->get();
-
-        //dd($countrupt[0]->Nbre);
         $countrupture = $countrupt[0]->Nbre;
-        //dd($countrupture);
+        $counttraitement = DB::table('traitement')->count();
+
+        $non = DB::table('traitement')
+                        ->select(DB::raw('COUNT(id) as Nbre'))
+                        ->where('paiement', '=', 'non')
+                        ->get();
+        $nonsoldes = $non[0]->Nbre;
+        //dd($nonsoldes);
 
         return view('home')
                ->with(compact('countprod'))
                ->with(compact('countpatient'))
                ->with(compact('countinf'))
-               ->with(compact('countrupture'));
+               ->with(compact('countrupture'))
+               ->with(compact('counttraitement'))
+               ->with(compact('nonsoldes'));
     }
 }

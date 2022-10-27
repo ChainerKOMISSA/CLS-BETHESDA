@@ -30,12 +30,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Liste des patients</h1>
+            <h1>Liste des soins</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-              <li class="breadcrumb-item active">Liste des patients</li>
+              <li class="breadcrumb-item active">Liste des soins</li>
             </ol>
           </div>
         </div>
@@ -48,11 +48,9 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Liste des patients</h3>
+          <h3 class="card-title">Liste des soins</h3>
           <div class="card-tools">
             <a href="{{route('newtraitement')}}" class="btn btn-success">Commencer un traitement</a>
-            <a href="" class="btn btn-primary">Prescrire une ordonnance</a>
-            <a href="{{route('newpatient')}}" class="btn btn-secondary">Ajouter un nouveau patient</a>
           </div>
         </div>
         <!-- /.card-header -->
@@ -66,36 +64,32 @@
             <thead>
               <tr>
                 <th>Numéro</th>
-                <th>Nom</th>
-                <th>Prénoms</th>
-                <th>Age</th>
-                <th>Quartier</th>
-                <th>Sexe</th>
-                <th>Téléphone</th>
+                <th>Date</th>
+                <th>Patient</th>
+                <th>Plaintes</th>
+                <th>Analyse demandée</th>
+                <th>Résultat</th>
+                <th>Diagnostic</th>
+                <th>Produit utilisé</th>
+                <th>Montant total</th>
+                <th>Paiement</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($patients as $key => $patient)
+                @foreach ($traitements as $key => $traitement)
               <tr>
                 <th scope="row">{{++$key}}</th>
-                <td>{{$patient->nom}}</td>
-                <td>{{$patient->prenom}}</td>
-                <td>{{$patient->age}}</td>
-                <td>{{$patient->quartier}}</td>
-                <td>{{$patient->sexe}}</td>
-                <td>{{$patient->telephone}}</td>
+                <td>{{$traitement->date}}</td>
+                <td>{{$traitement->patient_id}}</td>
+                <td>{{$traitement->plaintes}}</td>
+                <td>{{$traitement->analyse_id}}</td>
+                <td>{{$traitement->resultat}}</td>
+                <td>{{$traitement->diagnostic}}</td>
+                <td>{{$traitement->produit_id}}</td>
+                <td>{{$traitement->montant}}</td>
+                <td>{{$traitement->paiement}}</td>
                 <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="{{route('editpatient')}}"><i class="fas fa-folder"></i>Voir</a>
-
-                    <a class="btn btn-success btn-sm" href="{{route('modifypatient', ['patient'=>$patient->id])}}"><i class="fas fa-pencil-alt"></i>Modifier</a>
-
-                    <a class="btn btn-secondary btn-sm" href="#" onclick="if(confirm('Voulez-vous vraiment supprimer ce patient?')){
-                        document.getElementById('form-{{$patient->id}}').submit()}"><i class="fas fa-trash"></i>Supprimer</a>
-
-                    <form id="form-{{$patient->id}}" action="{{route('deletepatient', ['patient'=>$patient->id])}}" method="POST">
-                    @csrf
-                    <input type="hidden" name="_method" value="delete">
-                </form>
+                    <a class="btn btn-success btn-sm" href="{{route('modifytraitement', ['traitement'=>$traitement->id])}}"><i class="fas fa-pencil-alt"></i>Modifier</a>
                 </td>
               </tr>
               @endforeach
