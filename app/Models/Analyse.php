@@ -13,4 +13,9 @@ class Analyse extends Model
     protected $connection = 'mysql';
 
     protected $fillable = ["nom", "description", "prix", "prixCMS"];
+
+    public function traitements(){
+        return $this->hasMany('App\Models\Traitement');
+    }
+
 }

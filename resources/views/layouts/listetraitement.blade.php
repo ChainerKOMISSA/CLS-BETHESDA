@@ -80,12 +80,12 @@
               <tr>
                 <th scope="row">{{++$key}}</th>
                 <td>{{$traitement->date}}</td>
-                <td>{{$traitement->patient_id}}</td>
+                <td>{{$traitement->patient->nom}} {{$traitement->patient->prenom}}</td>
                 <td>{{$traitement->plaintes}}</td>
-                <td>{{$traitement->analyse_id}}</td>
+                <td>{{$traitement->analyse->nom}}</td>
                 <td>{{$traitement->resultat}}</td>
                 <td>{{$traitement->diagnostic}}</td>
-                <td>{{$traitement->produit_id}}</td>
+                <td>{{$traitement->produit->nomproduit}}</td>
                 <td>{{$traitement->montant}}</td>
                 <td>{{$traitement->paiement}}</td>
                 <td class="project-actions text-right">

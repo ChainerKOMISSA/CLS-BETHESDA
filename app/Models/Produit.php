@@ -17,4 +17,9 @@ class Produit extends Model
         return $this->belongsTo(Type::class, 'id');
     }
 
+    public function traitements(){
+        return $this->hasMany('App\Models\Traitement');
+    }
+
+
 }

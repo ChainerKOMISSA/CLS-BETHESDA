@@ -14,7 +14,7 @@ class Patient extends Model
     protected $fillable = ["nom", "prenom", "age", "quartier", "sexe", "telephone"];
 
     public function traitements(){
-        return $this->hasMany(Traitement::class);
+        return $this->hasMany('App\Models\Traitement');
     }
 
 }

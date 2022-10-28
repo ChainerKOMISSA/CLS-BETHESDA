@@ -30,15 +30,19 @@ class TraitementController extends Controller
 
 
     public function show(){
-        $produits = Produit::all();
-        //$patients = Patient::all();
-        $analyses = Analyse::all();
-        $traitements = DB::table('traitement')->get();
-        //$traitements = Traitement::find(1);
 
-        //dd($soins->patient->nom);
+        //$traitements = DB::table('traitement')->get();
 
-        return view('layouts.listetraitement', compact('analyses', 'traitements'));
+        $traitements = Patient::find(1)->traitements;
+        $produit = Produit::find(1)->traitements;
+        $analyse = Analyse::find(1)->traitements;
+
+        //$traitements = Traitement::with('patient', 'produit', 'analyse')->get();
+
+        return view('layouts.listetraitement')
+               ->with(compact('traitements'))
+               ->with(compact('produit'))
+               ->with(compact('analyse'));
     }
 
     public function nonsoldes(){

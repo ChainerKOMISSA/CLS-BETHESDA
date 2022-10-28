@@ -15,6 +15,14 @@ class Traitement extends Model
     protected $fillable = ["date", "patient_id", "plaintes", "diagnostic", "analyse_id", "resultat", "diagnostic", "produit_id", "montant", "paiement"];
 
     public function patient(){
-        return $this->belongsTo(Patient::class);
+        return $this->belongsTo('App\Models\Patient');
+    }
+
+    public function produit(){
+        return $this->belongsTo('App\Models\Produit');
+    }
+
+    public function analyse(){
+        return $this->belongsTo('App\Models\Analyse');
     }
 }
