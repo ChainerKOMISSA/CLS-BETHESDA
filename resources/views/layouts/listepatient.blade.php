@@ -65,7 +65,7 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th>Numéro</th>
+                <th>N°</th>
                 <th>Nom</th>
                 <th>Prénoms</th>
                 <th>Age</th>
@@ -89,7 +89,7 @@
 
                     <a class="btn btn-success btn-sm" href="{{route('modifypatient', ['patient'=>$patient->id])}}"><i class="fas fa-pencil-alt"></i>Modifier</a>
 
-                    <a class="btn btn-secondary btn-sm" href="#" onclick="if(confirm('Voulez-vous vraiment supprimer ce patient?')){
+                    <a class="btn btn-danger btn-sm" href="#" onclick="if(confirm('Voulez-vous vraiment supprimer ce patient?')){
                         document.getElementById('form-{{$patient->id}}').submit()}"><i class="fas fa-trash"></i>Supprimer</a>
 
                     <form id="form-{{$patient->id}}" action="{{route('deletepatient', ['patient'=>$patient->id])}}" method="POST">

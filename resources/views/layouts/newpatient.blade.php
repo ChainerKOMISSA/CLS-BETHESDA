@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="form-group col-md-8">
                             <label>Date:</label>
-                            <input type="date" name="date" class="form-control" required/>
+                            <input type="date" min="2023-01-01" max="datetime-local" name="date" class="form-control" required/>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="exampleInputEmail1">Température °C</label>
@@ -128,7 +128,7 @@
 
                 <div class="card-footer">
                     <button type="reset" class="btn btn-secondary">Annuler</button>
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                    <button type="submit" class="btn btn-success swalDefaultSuccess">Enregistrer</button>
                 </div>
               </form>
             </div>
@@ -168,4 +168,44 @@ $(function () {
 });
 </script>
 </body>
+<script>
+  $(function() {
+      var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+  
+      $('.swalDefaultSuccess').click(function() {
+        Toast.fire({
+          icon: 'success',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultInfo').click(function() {
+        Toast.fire({
+          icon: 'info',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultError').click(function() {
+        Toast.fire({
+          icon: 'error',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultWarning').click(function() {
+        Toast.fire({
+          icon: 'warning',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+      $('.swalDefaultQuestion').click(function() {
+        Toast.fire({
+          icon: 'question',
+          title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        })
+      });
+  </script>
 </html>

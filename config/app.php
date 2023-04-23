@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'CMS-BETHESDA'),
+    'name' => env('APP_NAME', 'CLS-BETHESDA'),
 
     /*
     |--------------------------------------------------------------------------

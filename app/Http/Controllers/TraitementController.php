@@ -31,18 +31,18 @@ class TraitementController extends Controller
 
     public function show(){
 
-        //$traitements = DB::table('traitement')->get();
+        $traitements = DB::table('traitement')->get();
 
-        $traitements = Patient::find(1)->traitements;
+        /*$traitements = Patient::find(1)->traitements;
         $produit = Produit::find(1)->traitements;
-        $analyse = Analyse::find(1)->traitements;
+        $analyse = Analyse::find(1)->traitements;*/
 
         //$traitements = Traitement::with('patient', 'produit', 'analyse')->get();
 
         return view('layouts.listetraitement')
-               ->with(compact('traitements'))
-               ->with(compact('produit'))
-               ->with(compact('analyse'));
+               ->with(compact('traitements'));
+               //->with(compact('produit'))
+               //->with(compact('analyse'));
     }
 
     public function nonsoldes(){

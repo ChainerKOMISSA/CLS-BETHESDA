@@ -84,7 +84,7 @@
                   <b>Facture N° #007612</b><br>
                   <br>
                   <b>Order ID:</b> 4F3S8J<br>
-                  <b>2chéance de paiement:</b> 2/22/2014<br>
+                  <b>Echéance de paiement:</b> 2/22/2014<br>
                 </div>
                 <!-- /.col -->
               </div>
