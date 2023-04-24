@@ -102,8 +102,8 @@
                         </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="exampleInputEmail1">Résultat de l'analyse</label>
-                        <input type="text" name="resultat" class="form-control">
+                      <label for="exampleInputEmail1">Résultat de l'analyse</label>
+                      <input name="resultat" id="" class="form-control"/>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Diagnostic final</label>
@@ -126,7 +126,7 @@
                       <div class="form-group col-md-4">
                         <label for="exampleInputEmail1">Paiement</label>
                         <select name="paiement" id="" class="form-control">
-                            <option value="oui">Effectué</option>
+                            <option value="oui" selected>Effectué</option>
                             <option value="non">Non effectué</option>
                         </select>
                       </div>

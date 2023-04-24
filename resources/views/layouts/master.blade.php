@@ -64,35 +64,24 @@
                 </div>
               </div>
 
+
               <div class="col-lg-3 col-6">
-                <div class="small-box bg-secondary">
+                <div class="small-box bg-success">
                   <div class="inner">
-                    <h3>{{$countprod}}</h3>
-                    <p>Produits</p>
+                    <h3>{{$counttraitement}}</h3>
+                    <p>Liste des soins</p>
                   </div>
                   <div class="icon">
-                    <i class="fas fa-capsules"></i>
+                    <i class="fas fa-procedures"></i>
                   </div>
-                  <a href="{{route('listeproduits')}}" class="small-box-footer">
+                  <a href="{{route('listetraitement')}}" class="small-box-footer">
                     En savoir plus <i class="fas fa-arrow-circle-right"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="col-lg-3 col-6">
-                <div class="small-box bg-secondary">
-                  <div class="inner">
-                    <h3>0</h3>
-                    <p>Accouchements</p>
-                  </div>
-                  <div class="icon">
-                    <i class="fas fa-baby"></i>
-                  </div>
-                  <a href="#" class="small-box-footer">
-                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
-                  </a>
-                </div>
-              </div>
+
+              
 
               <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
@@ -109,27 +98,8 @@
                 </div>
               </div>
 
-        </div>
-        <!-- /.row -->
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
               <div class="col-lg-3 col-6">
-                <div class="small-box bg-success">
-                  <div class="inner">
-                    <h3>{{$counttraitement}}</h3>
-                    <p>Liste des soins</p>
-                  </div>
-                  <div class="icon">
-                    <i class="fas fa-procedures"></i>
-                  </div>
-                  <a href="{{route('listetraitement')}}" class="small-box-footer">
-                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box bg-secondary">
+                <div class="small-box bg-danger">
                   <div class="inner">
                     <h3>{{$countrupture}}</h3>
                     <p>Alerte stock</p>
@@ -143,8 +113,28 @@
                 </div>
               </div>
 
+        </div>
+        <!-- /.row -->
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>{{$countprod}}</h3>
+                <p>Produits</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-capsules"></i>
+              </div>
+              <a href="{{route('listeproduits')}}" class="small-box-footer">
+                En savoir plus <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+
               <div class="col-lg-3 col-6">
-                <div class="small-box bg-secondary">
+                <div class="small-box bg-success">
                   <div class="inner">
                     <h3>{{$nonsoldes}}</h3>
                     <p>Traitements non soldés</p>
@@ -161,6 +151,22 @@
 
               <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>0</h3>
+                    <p>Accouchements</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fas fa-baby"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">
+                    En savoir plus <i class="fas fa-arrow-circle-right"></i>
+                  </a>
+                </div>
+              </div>
+
+
+              <div class="col-lg-3 col-6">
+                <div class="small-box bg-primary">
                   <div class="inner">
                     <h3>Analyses</h3>
                     <p>Cliquez pour voir les détails</p>
@@ -209,8 +215,8 @@
 
 <script src="{{URL::asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{ URL::asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{URL::asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{URL::asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{URL::asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
